@@ -1,12 +1,18 @@
-import { View, Text, Image } from 'react-native';
-import React from 'react';
+import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
+import React, {useEffect, useRef } from 'react';
 import Onboarding from "react-native-onboarding-swiper";
 import { useNavigation } from '@react-navigation/native';
 
+import LottieView from 'lottie-react-native';
 
+
+
+const {width, height} = Dimensions.get("window");
 
 const OnBoardingScreen = () => {
     const navigation = useNavigation();
+
+
 
     const DotComponent = ({ selected }) => {
         return (
@@ -19,19 +25,22 @@ const OnBoardingScreen = () => {
     }
   return (
     <Onboarding
-      onSkip={() => navigation.replace("Home")}
-      onDone={() => navigation.replace("Home")}
+      style={styles.container}
+      onSkip={() => navigation.replace("Login")}
+      onDone={() => navigation.replace("Login")}
       DotComponent={DotComponent}
       pages={[
         {
-          backgroundColor: "#fff",
+          backgroundColor: "#013220",
           image: (
-            <Image
-              source={{
-                uri: "https://cdn.cliqueinc.com/posts/285925/most-popular-fashion-items-285925-1685657985591-main.700x0c.jpg",
-              }}
-              className="w-72 h-72 object-contain"
-            />
+            <View style={styles.lottie}>
+              <LottieView
+                style={{ flex: 1 }}
+                source={require("../assets/animations/nft_3.json")}
+                autoPlay
+                loop
+              />
+            </View>
           ),
           title: "Welcome to Swyke",
           subtitle:
@@ -40,12 +49,14 @@ const OnBoardingScreen = () => {
         {
           backgroundColor: "#fff",
           image: (
-            <Image
-              source={{
-                uri: "https://images.pexels.com/photos/852860/pexels-photo-852860.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-              }}
-              className="w-72 h-72 object-contain"
-            />
+            <View style={styles.lottie}>
+              <LottieView
+                style={{ flex: 1 }}
+                source={require("../assets/animations/nft_2.json")}
+                autoPlay
+                loop
+              />
+            </View>
           ),
           title: "3D Imaging and Measurements",
           subtitle:
@@ -54,12 +65,14 @@ const OnBoardingScreen = () => {
         {
           backgroundColor: "#fff",
           image: (
-            <Image
-              source={{
-                uri: "https://i0.wp.com/fashionretail.blog/wp-content/uploads/2018/04/ai-fashion-retail-digital-retail.png?resize=556%2C299&ssl=1",
-              }}
-              className="w-72 h-72 object-contain"
-            />
+            <View style={styles.lottie}>
+              <LottieView
+                style={{ flex: 1 }}
+                source={require("../assets/animations/nft_2.json")}
+                autoPlay
+                loop
+              />
+            </View>
           ),
           title: "Tail AI",
           subtitle:
@@ -68,12 +81,14 @@ const OnBoardingScreen = () => {
         {
           backgroundColor: "#fff",
           image: (
-            <Image 
-              source={{
-                uri: "https://holrmagazine.com/wp-content/uploads/2021/09/eAcD3xCM00fWpL2txre4zA_b.jpg",
-              }}
-              className="object-contain w-72 h-72"
-            />
+            <View style={styles.lottie}>
+              <LottieView
+                style={{ flex: 1 }}
+                source={require("../assets/animations/nft_2.json")}
+                autoPlay
+                loop
+              />
+            </View>
           ),
           title: "Happy Shopping",
           subtitle:
@@ -86,4 +101,15 @@ const OnBoardingScreen = () => {
 
 
 
-export default OnBoardingScreen
+export default OnBoardingScreen;
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "white"
+    },
+    lottie: {
+        width: 200,
+        height: 200,
+    }
+})
