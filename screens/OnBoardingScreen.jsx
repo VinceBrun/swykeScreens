@@ -31,7 +31,7 @@ const OnBoardingScreen = () => {
       DotComponent={DotComponent}
       pages={[
         {
-          backgroundColor: "#013220",
+          backgroundColor: "#508e76",
           image: (
             <View style={styles.lottie}>
               <LottieView
@@ -47,7 +47,7 @@ const OnBoardingScreen = () => {
             "Swyke is a web3 mobile application that offers custom-fitted outfits and virtual designs available as NFTs.",
         },
         {
-          backgroundColor: "#fff",
+          backgroundColor: "#508e76",
           image: (
             <View style={styles.lottie}>
               <LottieView
@@ -63,7 +63,7 @@ const OnBoardingScreen = () => {
             "Clients can use their smartphones for body scanning, promoting collaboration between designers and clients.",
         },
         {
-          backgroundColor: "#fff",
+          backgroundColor: "#508e76",
           image: (
             <View style={styles.lottie}>
               <LottieView
@@ -79,7 +79,7 @@ const OnBoardingScreen = () => {
             'It features an AI fashion assistant, "Tail", that can transform images of dresses into lay plans or sewing patterns.',
         },
         {
-          backgroundColor: "#fff",
+          backgroundColor: "#508e76",
           image: (
             <View style={styles.lottie}>
               <LottieView
