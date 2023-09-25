@@ -4,6 +4,7 @@ import React, {useEffect, useRef, useState} from 'react'
 import LottieView from "lottie-react-native";
 import { useNavigation } from "@react-navigation/native";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../config/firebase";
 
 
 
@@ -44,20 +45,25 @@ const Login = () => {
             <Text className="text-gray-700 ml-4">Email Address</Text>
             <TextInput
               className="p-4 bg-gray-100 text-gray-700 rounded-2xl"
-              value=""
+              value={email}
+              onChangeText={(value) => setEmail(value)}
               placeholder="Enter Email"
             />
             <Text className="text-gray-700 ml-4">Password</Text>
             <TextInput
               className="p-4 bg-gray-100 text-gray-700 rounded-2xl"
               secureTextEntry
-              value=""
+              value={password}
+              onChangeText={(value) => setPassword(value)}
               placeholder="Enter Password"
             />
             <TouchableOpacity className="flex items-end mb-5">
               <Text className="text-gray-700">Forgot Password?</Text>
             </TouchableOpacity>
-            <TouchableOpacity className="py-3 bg-yellow-400 rounded-xl">
+            <TouchableOpacity
+              onPress={handleSubmit}
+              className="py-3 bg-yellow-400 rounded-xl"
+            >
               <Text className="font-xl font-bold text-center text-gray-700">
                 Login
               </Text>
