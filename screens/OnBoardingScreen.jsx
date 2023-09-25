@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, Image, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import React, {useEffect, useRef } from 'react';
 import Onboarding from "react-native-onboarding-swiper";
 import { useNavigation } from '@react-navigation/native';
